@@ -16,7 +16,7 @@ type Server struct {
 	v1.UnimplementedProductServiceServer
 }
 
-func NewServer() *Server {
+func New() *Server {
 	return &Server{
 		products: make(map[string]v1.Product),
 	}

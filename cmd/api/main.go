@@ -7,6 +7,7 @@ import (
 	"os"
 
 	v1 "github.com/rschio/tutorialgrpc/gen/product/v1"
+	"github.com/rschio/tutorialgrpc/server"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
@@ -19,7 +20,7 @@ func main() {
 
 func run() error {
 	grpcServer := grpc.NewServer()
-	srv := new(v1.UnimplementedProductServiceServer)
+	srv := server.New()
 	v1.RegisterProductServiceServer(grpcServer, srv)
 	reflection.Register(grpcServer)
 
