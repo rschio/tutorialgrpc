@@ -39,6 +39,7 @@ service ProductService {
 	rpc AddProduct(AddProductRequest) returns (AddProductResponse) {
 		option (google.api.http) = {
 			post: "/api/v1/add"
+			body: "*"
 		};
 	}
 	rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {
